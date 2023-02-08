@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 *,
 body,
 html {
@@ -5,8 +7,9 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: "Kufam", sans-serif;
 }
 
-body {
-  background-color: pink;
+h1 {
+  font-size: var(--h1);
 }
