@@ -1,34 +1,52 @@
 import "../styles/style.css";
-import "./api";
+import { findFish } from "./api";
 import { DOMSelectors } from "./dom";
 
 DOMSelectors.theme.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (document.body.classList.contains("light")) {
-      document.body.classList.add("dark");
-      document.body.classList.remove("light");
-      console.log("dark mode");
-    } else {
-      document.body.classList.add("light");
-      document.body.classList.remove("dark");
-      console.log("light mode");
-}
+  e.preventDefault();
+  if (document.body.classList.contains("light")) {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+    console.log("dark mode");
+  } else {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+    console.log("light mode");
+  }
 });
 
-const searchFish = async() => {
-    try {
-        const data = await findFish();
-        const searchString = e.target.value;
-        console.log(searchString);
-        const filteredFish = fish.filter((fish) => {
-          return (
-            fish.name.toLowerCase().includes(searchString) ||
-            fish.class.toLowerCase().includes(searchString)
-          );
-        });
-    } catch (err) {
-        console.log("ERROR");
-        document.getElementById("api-response").textContent = "oopsie woopsie :(";
-      }
-};
+DOMSelectors.search.addEventListener("keyup", async function (e) {
+  try {
+    e.preventDefault();
+    const data = await findFish();
+    const searchString = e.target.value;
+    console.log(searchString);
+    const filteredFish = data.filter((fish) => {
+      return fish["Species Name"].toLowerCase().includes(searchString);
+    });
+    createCard(filteredFish);
+  } catch (err) {
+    console.log("search-error");
+    document.getElementById("api-response").textContent = "oopsie woopsie :(";
+  }
+});
 
+function createCard() {
+  DOMSelectors.list.insertAdjacentHTML(
+    "beforeend",
+    `
+  <li class="fishCard">
+      <h2 class="fish-name" >${fish["Species Name"]}</h2>
+      <h3 class="fish-sci-name">${fish["Scientific Name"]}</h3>
+      <img src="${fish["Species Illustration Photo"].src}" alt="${fish["Species Illustration Photo"].alt}" class="img"></img>
+  </li>
+`
+  );
+}
+
+// const f = async () => {
+//   const data = await findFish();
+//   data.forEach((fish) => console.log(fish["Species Name"]));
+// };
+
+// f();
