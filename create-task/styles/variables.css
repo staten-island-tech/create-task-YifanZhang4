@@ -1,6 +1,5 @@
 body {
   background-color: var(--primary);
-  color: var(--secondary);
 }
 
 h1,
@@ -26,8 +25,8 @@ h6 {
 
 :root {
   /*Site BG*/
-  --dark: #604544;
-  --light: #b09393;
+  --dark: #2C3F4F;
+  --light: #97DEE7;
 
   /*Typography*/
   --h1: 4.209rem;

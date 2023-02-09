@@ -12,4 +12,32 @@ html {
 
 h1 {
   font-size: var(--h1);
+  color: var(--secondary);
+}
+
+button,
+button:link,
+button:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5rem;
+  transition: all 0.2s;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0.5rem #000000;
+}
+
+#search-bar {
+  width: 100%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  padding: 5px 10px;
+  font-size: 12px;
 }
