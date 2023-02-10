@@ -7,11 +7,10 @@ const findFish = async () => {
       throw Error(res.status);
     } else {
       const fishlist = await res.json();
-      console.log(fishlist);
       return fishlist;
     }
   } catch (err) {
-    console.log("ERROR");
+    console.log("api-ERROR");
     DOMSelectors.api.textContent = "Something went wrong, please try again.";
   }
 };

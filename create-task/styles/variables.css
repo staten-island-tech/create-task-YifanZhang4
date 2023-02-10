@@ -10,7 +10,6 @@ h5,
 h6 {
   text-align: center;
   margin: 2rem;
-  font-family: "Kufam", sans-serif;
 }
 
 .dark {
@@ -25,14 +24,14 @@ h6 {
 
 :root {
   /*Site BG*/
-  --dark: #2C3F4F;
-  --light: #97DEE7;
+  --dark: #2c3f4f;
+  --light: #97dee7;
 
   /*Typography*/
-  --h1: 4.209rem;
-  --h2: 3.157rem;
-  --h3: 2.369rem;
-  --h4: 1.777rem;
-  --h5: 1.333rem;
+  --h1: 5.653rem;
+  --h2: 3.998rem;
+  --h3: 2.827rem;
+  --h4: 1.999rem;
+  --h5: 1.414rem;
   --h6: 1rem;
 }

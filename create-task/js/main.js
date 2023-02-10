@@ -31,12 +31,23 @@ DOMSelectors.search.addEventListener("keyup", async function (e) {
   }
 });
 
-function createCard() {
-  DOMSelectors.list.insertAdjacentHTML(
+async function mappingFish() {
+  const data = await findFish();
+  const fishmap = data.map(function (fish) {
+    return fish["Species Name"];
+  });
+  console.log(fishmap);
+  return fishmap;
+}
+
+mappingFish();
+
+function createCard(fish) {
+  let name = DOMSelectors.list.insertAdjacentHTML(
     "beforeend",
     `
   <li class="fishCard">
-      <h2 class="fish-name" >${fish["Species Name"]}</h2>
+      <h2 class="fish-name" >${name}</h2>
       <h3 class="fish-sci-name">${fish["Scientific Name"]}</h3>
       <img src="${fish["Species Illustration Photo"].src}" alt="${fish["Species Illustration Photo"].alt}" class="img"></img>
   </li>
