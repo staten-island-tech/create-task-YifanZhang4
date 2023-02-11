@@ -1,5 +1,5 @@
 import "../styles/style.css";
-import { findFish } from "./api";
+import { fishList } from "./list";
 import { DOMSelectors } from "./dom";
 
 DOMSelectors.theme.addEventListener("click", function (e) {
@@ -15,15 +15,16 @@ DOMSelectors.theme.addEventListener("click", function (e) {
   }
 });
 
-DOMSelectors.search.addEventListener("keyup", async function (e) {
+DOMSelectors.search.addEventListener("keyup", function (e) {
   try {
     e.preventDefault();
-    const data = await findFish();
+    const data = fishList;
     const searchString = e.target.value;
     console.log(searchString);
     const filteredFish = data.filter((fish) => {
-      return fish["Species Name"].toLowerCase().includes(searchString);
+      return fish.name.toLowerCase().includes(searchString);
     });
+    console.log(filteredFish);
     createCard(filteredFish);
   } catch (err) {
     console.log("search-error");
@@ -31,25 +32,29 @@ DOMSelectors.search.addEventListener("keyup", async function (e) {
   }
 });
 
-async function mappingFish() {
-  const data = await findFish();
-  const fishmap = data.map(function (fish) {
-    return fish["Species Name"];
-  });
-  console.log(fishmap);
-  return fishmap;
-}
+// async function mappingFish() {
+//   const data = await findFish();
+//   const fishmap = data.map(function (fish) {
+//     return fish["Species Name"];
+//   });
+//   console.log(fishmap);
+//   return fishmap;
+// }
 
-mappingFish();
+// mappingFish();
 
-function createCard(fish) {
-  let name = DOMSelectors.list.insertAdjacentHTML(
+function createCard(name, sciName, imgSrc, imgAlt, weight, length, lifespan, region) {
+DOMSelectors.list.insertAdjacentHTML(
     "beforeend",
     `
   <li class="fishCard">
       <h2 class="fish-name" >${name}</h2>
-      <h3 class="fish-sci-name">${fish["Scientific Name"]}</h3>
-      <img src="${fish["Species Illustration Photo"].src}" alt="${fish["Species Illustration Photo"].alt}" class="img"></img>
+      <h3 class="fish-sci-name">${sciName}</h3>
+      <img src="${imgSrc}" alt="${imgAlt}" class="img"></img>
+      <p>Weight: ${weight}</p>
+      <p>Length: ${length}</p>
+      <p>Lifespan: ${lifespan}</p>
+      <p>Region: ${region}</p>
   </li>
 `
   );
