@@ -25,26 +25,39 @@ DOMSelectors.search.addEventListener("keyup", function (e) {
       return fish.name.toLowerCase().includes(searchString);
     });
     console.log(filteredFish);
-    createCard(filteredFish);
+    if (Array.length > 0) {
+      filteredFish.forEach((fish) =>
+        createCard(
+          fish.name,
+          fish.sciName,
+          fish.imgSrc,
+          fish.imgAlt,
+          fish.weight,
+          fish.long,
+          fish.lifespan,
+          fish.region
+        )
+      );
+    } else {
+      this.insertAdjacentHTML
+    }
   } catch (err) {
     console.log("search-error");
     document.getElementById("api-response").textContent = "oopsie woopsie :(";
   }
 });
 
-// async function mappingFish() {
-//   const data = await findFish();
-//   const fishmap = data.map(function (fish) {
-//     return fish["Species Name"];
-//   });
-//   console.log(fishmap);
-//   return fishmap;
-// }
-
-// mappingFish();
-
-function createCard(name, sciName, imgSrc, imgAlt, weight, length, lifespan, region) {
-DOMSelectors.list.insertAdjacentHTML(
+function createCard(
+  name,
+  sciName,
+  imgSrc,
+  imgAlt,
+  weight,
+  long,
+  lifespan,
+  region
+) {
+  DOMSelectors.list.insertAdjacentHTML(
     "beforeend",
     `
   <li class="fishCard">
@@ -52,17 +65,10 @@ DOMSelectors.list.insertAdjacentHTML(
       <h3 class="fish-sci-name">${sciName}</h3>
       <img src="${imgSrc}" alt="${imgAlt}" class="img"></img>
       <p>Weight: ${weight}</p>
-      <p>Length: ${length}</p>
+      <p>Length: ${long}</p>
       <p>Lifespan: ${lifespan}</p>
       <p>Region: ${region}</p>
   </li>
 `
   );
 }
-
-// const f = async () => {
-//   const data = await findFish();
-//   data.forEach((fish) => console.log(fish["Species Name"]));
-// };
-
-// f();
