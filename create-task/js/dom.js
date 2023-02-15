@@ -3,6 +3,7 @@ const DOMSelectors = {
   theme: document.getElementById("theme"),
   search: document.getElementById("search-bar"),
   list: document.getElementById("list"),
+  cards: document.querySelectorAll("#fishCard"),
 };
 
 export { DOMSelectors };

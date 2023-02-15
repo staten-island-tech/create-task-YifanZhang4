@@ -26,7 +26,9 @@ DOMSelectors.search.addEventListener("keyup", function (e) {
     });
     console.log(filteredFish);
     if (Array.length > 0) {
-      filteredFish.forEach((fish) =>
+      if (cards.name == filteredFish.name){
+      }
+      else {filteredFish.forEach((fish) =>
         createCard(
           fish.name,
           fish.sciName,
@@ -37,9 +39,8 @@ DOMSelectors.search.addEventListener("keyup", function (e) {
           fish.lifespan,
           fish.region
         )
-      );
+      ); }
     } else {
-      this.insertAdjacentHTML
     }
   } catch (err) {
     console.log("search-error");
