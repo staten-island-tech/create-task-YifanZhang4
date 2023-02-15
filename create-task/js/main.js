@@ -26,9 +26,7 @@ DOMSelectors.search.addEventListener("keyup", function (e) {
     });
     console.log(filteredFish);
     if (Array.length > 0) {
-      if (cards.name == filteredFish.name){
-      }
-      else {filteredFish.forEach((fish) =>
+      filteredFish.forEach((fish) =>
         createCard(
           fish.name,
           fish.sciName,
@@ -39,8 +37,9 @@ DOMSelectors.search.addEventListener("keyup", function (e) {
           fish.lifespan,
           fish.region
         )
-      ); }
+      );
     } else {
+      remove();
     }
   } catch (err) {
     console.log("search-error");
@@ -61,7 +60,7 @@ function createCard(
   DOMSelectors.list.insertAdjacentHTML(
     "beforeend",
     `
-  <li class="fishCard">
+  <div class="fishCard">
       <h2 class="fish-name" >${name}</h2>
       <h3 class="fish-sci-name">${sciName}</h3>
       <img src="${imgSrc}" alt="${imgAlt}" class="img"></img>
@@ -69,7 +68,7 @@ function createCard(
       <p>Length: ${long}</p>
       <p>Lifespan: ${lifespan}</p>
       <p>Region: ${region}</p>
-  </li>
+  </div>
 `
   );
 }

@@ -208,7 +208,8 @@ const fishList = [
     name: "Butterfish",
     sciName: "Peprilus triacanthus",
     aka: "American Butterfish, Atlatnic Butterfish",
-    imgSrc: "",
+    imgSrc:
+      "https://media.fisheries.noaa.gov/styles/original/s3/2022-08/640x427-Butterfish-NOAAFisheries.png?itok=hBVbVwT4",
     imgAlt: "",
     weight: "Up to 1.25 pounds",
     long: "Up to 6-12 inches",

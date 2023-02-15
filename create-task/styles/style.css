@@ -51,12 +51,17 @@ button:hover {
 }
 
 .fishCard {
+  justify-content: center;
   background-color: white;
-  border-radius: 3px;
-  border-color: var(--dark);
+  border-radius: 5rem;
+  border: solid 1rem var(--secondary);
   padding: 2rem 2rem;
-  margin: auto;
+  margin: 10rem;
   width: 25rem;
   height: 40rem;
   font-size: 2rem;
+}
+
+.img {
+  max-width: 100%;
 }
