@@ -15,51 +15,47 @@ DOMSelectors.theme.addEventListener("click", function (e) {
   }
 });
 
-DOMSelectors.search.addEventListener("keyup", function (e) {
-  try {
-    e.preventDefault();
-    const data = fishList;
-    const searchString = e.target.value;
-    console.log(searchString);
-    const filteredFish = data.filter((fish) => {
-      return fish.name.toLowerCase().includes(searchString);
-    });
-    console.log(filteredFish);
-    if (Array.length > 0) {
-      filteredFish.forEach((fish) =>
-        createCard(
-          fish.name,
-          fish.sciName,
-          fish.imgSrc,
-          fish.imgAlt,
-          fish.weight,
-          fish.long,
-          fish.lifespan,
-          fish.region
-        )
-      );
-    } else {
-      remove();
-    }
-  } catch (err) {
-    console.log("search-error");
-    document.getElementById("api-response").textContent = "oopsie woopsie :(";
+DOMSelectors.enter.addEventListener("click", function (e) {
+  e.preventDefault();
+  const data = fishList;
+  const searchString = DOMSelectors.search.value;
+  console.log(searchString);
+  const filteredFish = data.filter((fish) => {
+    return fish.name.toLowerCase().includes(searchString);
+  });
+  console.log(filteredFish);
+  if (Array.length > 0) {
+    feesh.delete();
+    filteredFish.forEach((fish) =>
+      feesh.createCard(
+        fish.name,
+        fish.sciName,
+        fish.imgSrc,
+        fish.imgAlt,
+        fish.weight,
+        fish.long,
+        fish.lifespan,
+        fish.region
+      )
+    );
+  } else {
   }
 });
 
-function createCard(
-  name,
-  sciName,
-  imgSrc,
-  imgAlt,
-  weight,
-  long,
-  lifespan,
-  region
-) {
-  DOMSelectors.list.insertAdjacentHTML(
-    "beforeend",
-    `
+const feesh = {
+  createCard: function (
+    name,
+    sciName,
+    imgSrc,
+    imgAlt,
+    weight,
+    long,
+    lifespan,
+    region
+  ) {
+    DOMSelectors.list.insertAdjacentHTML(
+      "beforeend",
+      `
   <div class="fishCard">
       <h2 class="fish-name" >${name}</h2>
       <h3 class="fish-sci-name">${sciName}</h3>
@@ -70,5 +66,12 @@ function createCard(
       <p>Region: ${region}</p>
   </div>
 `
-  );
-}
+    );
+  },
+  delete: function () {
+    const cards = document.querySelectorAll(".fishCard");
+    cards.forEach((card) => {
+      card.remove();
+    });
+  },
+};
