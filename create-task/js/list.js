@@ -2,7 +2,6 @@ const fishList = [
   {
     name: "Crimson Jobfish",
     sciName: "Pristipomoides filamentosus",
-    aka: "Opakapaka, Hawaiian pink snapper",
     imgSrc:
       "https://media.fisheries.noaa.gov/2022-07/640x427-Opakapaka-pink-snapper.png?itok=uj6-PmkG",
     imgAlt: "",
@@ -14,7 +13,6 @@ const fishList = [
   {
     name: "White Hake",
     sciName: "Urophycis tenuis",
-    aka: "Mud Hake, Boston Hake",
     imgSrc:
       "https://media.fisheries.noaa.gov/2020-12/640x427-Hake_White_NB_W.jpg?itok=yHy_AuTT",
     imgAlt: "",
@@ -26,7 +24,6 @@ const fishList = [
   {
     name: "Atlantic Chub Mackerel",
     sciName: "Scomber colias",
-    aka: "Tinker mackerel",
     imgSrc:
       "https://media.fisheries.noaa.gov/2021-04/640x427-Atlantic-chub-mackerel-FNL_NB_W.jpg?itok=TtyvYmrx",
     imgAlt: "",
@@ -38,7 +35,6 @@ const fishList = [
   {
     name: "Shortfin Squid",
     sciName: "Illex illecebrosus",
-    aka: "Illex Squid, Summer Squid",
     imgSrc:
       "https://media.fisheries.noaa.gov/2021-03/squid_illex_nb_w_0.png?itok=Gms9hXDg",
     imgAlt: "",
@@ -50,7 +46,6 @@ const fishList = [
   {
     name: "American Lobster",
     sciName: "Homarus americanus",
-    aka: null,
     imgSrc:
       "https://media.fisheries.noaa.gov/styles/original/s3/dam-migration/640x427-american-lobster.png?itok=FX0oMipE",
     imgAlt: "",
@@ -62,7 +57,6 @@ const fishList = [
   {
     name: "Yellowtail Rockfish",
     sciName: "Sebastes flavidus",
-    aka: "Yellow Seaperch, Green Rockfish",
     imgSrc:
       "https://media.fisheries.noaa.gov/dam-migration/640x427-rockfish_yellowtail_nb_w.jpg?itok=Ymb-q1-n",
     imgAlt: "",

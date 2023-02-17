@@ -1,6 +1,9 @@
 import "../styles/style.css";
 import { fishList } from "./list";
 import { DOMSelectors } from "./dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 DOMSelectors.theme.addEventListener("click", function (e) {
   e.preventDefault();
@@ -56,8 +59,8 @@ const feesh = {
     DOMSelectors.list.insertAdjacentHTML(
       "beforeend",
       `
-  <div class="fishCard">
-      <h2 class="fish-name" >${name}</h2>
+  <div class="fishCard" data-aos="zoom-in">
+      <h2 class="fish-name">${name}</h2>
       <h3 class="fish-sci-name">${sciName}</h3>
       <img src="${imgSrc}" alt="${imgAlt}" class="img"></img>
       <p>Weight: ${weight}</p>

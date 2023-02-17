@@ -15,17 +15,20 @@ h6 {
 .dark {
   --primary: var(--dark);
   --secondary: var(--light);
+  --tertiary: var(--lighter);
 }
 
 .light {
   --primary: var(--light);
   --secondary: var(--dark);
+  --tertiary: var(--lighter);
 }
 
 :root {
   /*Site BG*/
-  --dark: #2c3f4f;
-  --light: #97dee7;
+  --dark: #1b4b5c;
+  --light: #71bfcb;
+  --lighter: #dffbff;
 
   /*Typography*/
   --h1: 5.653rem;
