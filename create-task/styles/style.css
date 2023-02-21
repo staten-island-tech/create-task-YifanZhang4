@@ -13,6 +13,7 @@ html {
 h1 {
   font-size: var(--h1);
   color: var(--secondary);
+  text-decoration: wavy underline;
 }
 
 button,
@@ -28,16 +29,23 @@ button:visited {
   background-color: var(--tertiary);
 }
 button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-.3rem);
   box-shadow: 0 0.3rem 0.5rem #000000;
 }
 
+#theme {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 #label {
-font-size: 1.5rem;
+  font-size: 2rem;
+  color: var(--secondary);
 }
 
 #search-bar {
-  width: 95%;
+  width: 90%;
   height: 2rem;
   border-radius: 0.5rem;
   border: 0.05rem solid #eaeaeabc;
