@@ -32,12 +32,17 @@ button:hover {
   box-shadow: 0 0.3rem 0.5rem #000000;
 }
 
+#label {
+font-size: 1.5rem;
+}
+
 #search-bar {
-  width: 100%;
+  width: 95%;
   height: 2rem;
   border-radius: 0.5rem;
   border: 0.05rem solid #eaeaeabc;
   padding: 1rem;
+  margin: .5rem;
   font-size: 1.5rem;
 }
 
@@ -61,10 +66,6 @@ button:hover {
   width: 25rem;
   height: 40rem;
   font-size: 2rem;
-}
-
-.fishCard:hover {
-  
 }
 
 .img {
