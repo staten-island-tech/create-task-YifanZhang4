@@ -4,6 +4,7 @@ const DOMSelectors = {
   search: document.getElementById("search-bar"),
   enter: document.getElementById("search-enter"),
   list: document.getElementById("list"),
+  random: document.getElementById("random"),
 };
 
 export { DOMSelectors };

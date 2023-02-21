@@ -45,6 +45,24 @@ DOMSelectors.enter.addEventListener("click", function (e) {
   }
 });
 
+DOMSelectors.random.addEventListener("click", function (e) {
+  e.preventDefault();
+  const data = fishList;
+  const rand = data[Math.floor(Math.random() * data.length)];
+  console.log(rand.name);
+  feesh.delete();
+  feesh.createCard(
+    rand.name,
+    rand.sciName,
+    rand.imgSrc,
+    rand.imgAlt,
+    rand.weight,
+    rand.long,
+    rand.lifespan,
+    rand.region
+    )
+  });
+
 const feesh = {
   createCard: function (
     name,
