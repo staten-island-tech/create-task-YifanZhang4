@@ -22,14 +22,9 @@ DOMSelectors.enter.addEventListener("click", function (e) {
   e.preventDefault();
   const data = fishList;
   const searchString = DOMSelectors.search.value;
-  console.log(searchString);
-  const filteredFish = data.filter((fish) => {
-    return fish.name.toLowerCase().includes(searchString);
-  });
-  console.log(filteredFish);
-  if (Array.length > 0) {
-    feesh.delete();
-    filteredFish.forEach((fish) =>
+  if (searchString === "all") {
+    console.log(searchString);
+    data.forEach((fish) =>
       feesh.createCard(
         fish.name,
         fish.sciName,
@@ -42,6 +37,30 @@ DOMSelectors.enter.addEventListener("click", function (e) {
       )
     );
   } else {
+    console.log(searchString);
+    const lowerSS = searchString.toLowerCase();
+    const filteredFish = data.filter((fish) => {
+      return fish.name.toLowerCase().includes(lowerSS);
+    });
+    console.log(filteredFish);
+    if (Array.length > 0) {
+      console.log("fish found :)");
+      console.log(Array.length);
+      feesh.delete();
+      filteredFish.forEach((fish) =>
+        feesh.createCard(
+          fish.name,
+          fish.sciName,
+          fish.imgSrc,
+          fish.imgAlt,
+          fish.weight,
+          fish.long,
+          fish.lifespan,
+          fish.region
+        )
+      );
+    } else {
+    }
   }
 });
 
@@ -60,8 +79,8 @@ DOMSelectors.random.addEventListener("click", function (e) {
     rand.long,
     rand.lifespan,
     rand.region
-    )
-  });
+  );
+});
 
 const feesh = {
   createCard: function (
@@ -96,3 +115,5 @@ const feesh = {
     });
   },
 };
+
+console.log(fishList.length);

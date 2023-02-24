@@ -54,8 +54,10 @@ button:hover {
   font-size: 1.5rem;
 }
 
-#api-response {
+#none {
   font-size: 5rem;
+  text-align: center;
+  color: var(--secondary);
 }
 
 #list {
