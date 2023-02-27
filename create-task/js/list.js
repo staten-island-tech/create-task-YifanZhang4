@@ -441,3 +441,5 @@ const fishList = [
     region: "North Pacific Ocean, Arctic Ocean",
   },
 ];
+
+export { fishList };
